@@ -1,9 +1,8 @@
 // Copyright 2021 NNTU-CS
 
 int cbinsearch(int *arr, int size, int value) {
-    int l = 0;
-    int r = 0;
-    
+    int k = 0;
+    int w = 0;
     int t = 0;
     for (int i = 0; i < size; i++) {
         bool flag = true;
@@ -19,21 +18,19 @@ int cbinsearch(int *arr, int size, int value) {
             break;
         }
     }
-    
     for (int i = 0; i < size; i++) {
         if (arr[i] == value) {
-            l = i;
+            w = i;
         }
     }
-    for (int i = size; i < 0; i--) {
+    for (int i = w; i < size; i++) {
         if (arr[i] == value) {
-            r = i;
+            k += 1;
+        } else {
+            break;
         }
     }
-    
-    if (r + l == 0) {
+    if (k == 0) {
         return 0;
-    } else {
-        return r - l + 1;
     }
 }

@@ -42,7 +42,7 @@ int cbinsearch(int *arr, int size, int value) {
              l = mid + 1;
         }
     }
-    if (f) {
+    if (!f) {
         return k;
     } else {
          return 0;
